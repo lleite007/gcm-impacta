@@ -1,1 +1,73 @@
+# APACHE Versão 2.2 para 2.4(Versão estável)
 
+MPMs carregáveis ​​em tempo de execução
+Múltiplos MPMs agora podem ser construídos como módulos carregáveis em tempo de compilação. O MPM de escolha pode ser configurado em tempo de execução através de LoadModuledirectiva.
+Evento MPM
+O evento MPM já não é experimental, mas agora é totalmente suportado.
+Suporte assíncrono
+Melhor suporte para leitura / escrita assíncrona para suporte a MPMs e plataformas.
+Configuração LogLevel por módulo e por diretório
+O LogLevelagora pode ser configurado por módulo e por diretório. Novos níveis trace1 de trace8ter sido adicionado acima do debugnível de log.
+Seções de configuração por solicitação
+<If>, <ElseIf>E <Else> seções podem ser usadas para definir a configuração com base em critérios por solicitação.
+Parser de expressão de uso geral
+Um novo analisador de expressão permite especificar condições complexas usando uma sintaxe comum em directivas como SetEnvIfExpr, RewriteCond, Header, <If>, e outros.
+KeepAliveTimeout em milissegundos
+Agora é possível KeepAliveTimeoutespecificar em milissegundos.
+Diretriz NameVirtualHost
+Não é mais necessário e agora está desativado.
+Substituir configuração
+A nova AllowOverrideList diretiva permite um controle mais detalhado que as diretrizes são permitidas nos .htaccessarquivos.
+Variáveis ​​do arquivo de configuração
+Agora é possível a Define variáveis ​​na configuração, permitindo uma representação mais clara se o mesmo valor é usado em muitos lugares na configuração.
+Uso reduzido da memória
+Apesar de muitos novos recursos, 2.4.x tende a usar menos memória do que 2.2.x.
+topo
+Novos módulos
+
+mod_proxy_fcgi
+FastCGI Protocolo backend para mod_proxy
+mod_proxy_scgi
+Protocolo SCGI backend para mod_proxy
+mod_proxy_express
+Fornece proxies reversos de massa configurados dinamicamente para mod_proxy
+mod_remoteip
+Substitui o aparente endereço IP e nome de host do cliente para a solicitação com a lista de endereços IP apresentada por um proxies ou um balanceador de carga por meio dos cabeçalhos de solicitação.
+mod_heartmonitor, mod_lbmethod_heartbeat
+Permitir mod_proxy_balancerbasear decisões de balanceamento de carga no número de conexões ativas nos servidores back-end.
+mod_proxy_html
+Anteriormente um módulo de terceiros, isso suporta a fixação de links HTML em uma situação de proxy reverso, onde o back-end gera URLs que não são válidos para os clientes do proxy.
+mod_sed
+Uma substituição avançada de mod_substitute, permite editar o corpo de resposta com o poder cheio de sed.
+mod_auth_form
+Ativa a autenticação baseada em formulários.
+mod_session
+Permite o uso do estado de sessão para clientes, usando o armazenamento de cookie ou de banco de dados.
+mod_allowmethods
+Novo módulo para restringir certos métodos HTTP sem interferir com a autenticação ou autorização.
+mod_lua
+Incorpora o Lua língua para httpd, para as funções de configuração e lógica das pequenas empresas. (Experimental)
+mod_log_debug
+Permite a adição de log de depuração personalizável em diferentes fases do processamento da solicitação.
+mod_buffer
+Fornece buffering as pilhas de filtro de entrada e saída
+mod_data
+Converta o corpo da resposta em um URL de dados RFC2397
+mod_ratelimit
+Fornece limite de largura de banda para clientes
+mod_request
+Fornece Filtros para manipular e disponibilizar os corpos de solicitação HTTP
+mod_reflector
+Fornece reflexão de um corpo de solicitação como uma resposta através da pilha de filtro de saída.
+mod_slotmem_shm
+Fornece um provedor de memória compartilhada baseado em Slot (ala o placar).
+mod_xml2enc
+Anteriormente um módulo de terceiros, isso suporta a internacionalização em módulos de filtros baseados em libxml2 (com marca registrada).
+mod_macro (Disponível desde 2.4.5)
+Forneça macros dentro de arquivos de configuração.
+mod_proxy_wstunnel (Disponível desde 2.4.5)
+Suporte web-soquete túneis.
+mod_authnz_fcgi (Disponível a partir de 2.4.10)
+Ativar aplicativos autorizadores FastCGI para autenticar e / ou autorizar clientes.
+mod_http2 (Disponível a partir de 2.4.17)
+Suporte para a camada de transporte HTTP / 2.
